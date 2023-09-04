@@ -73,12 +73,12 @@ The project is about predicting the severity of road accidents in a specific reg
 
 
 5. Which variable/column will be your target/label in your ML model?
-    Injury Severity
+    - Injury Severity
 
 6. Which variables/columns may selected as features/predictors for your ML models?
-   Since there are too many features and adding all the features will increase noise in the model so the features are selected after performing the basic EDA and applying feature selection algos (PCA, dimensionality reduction, selectKbest).
+   - Since there are too many features and adding all the features will increase noise in the model so the features are selected after performing the basic EDA and applying feature selection algos (PCA, dimensionality reduction, selectKbest).
 
 
 ## References
-Crash Reporting - Drivers Data (2015 - 2023) | Montgomery county, Maryland. (https://catalog.data.gov/dataset/crash-reporting-drivers-data)
+- Crash Reporting - Drivers Data (2015 - 2023) | Montgomery county, Maryland. (https://catalog.data.gov/dataset/crash-reporting-drivers-data)
 
