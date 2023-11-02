@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <title>Model Prediction</title>
+</head>
+
+<body>
+    <h1>Model Prediction</h1>
+
+    <form method="POST" action="/predict">
+        <label for="feature1">Year:</label>
+        <select name="feature1" id="feature1">
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        </select><br>
+
+        <label for="feature2">Month:</label>
+        <select name="feature2" id="feature2">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select><br>
+
+        <label for="feature3">Day/Night</label>
+        <select name="feature3" id="feature3">
+            <option value="0">Day</option>
+            <option value="1">Night</option>
+        </select><br>
+
+        <label for="feature4">Weather:</label>
+        <select name="feature4" id="feature4" onchange="updateWeather(this.value)">
+            <option value="BLOWING SAND, SOIL, DIRT">BLOWING SAND, SOIL, DIRT</option>
+            <option value="BLOWING SNOW">BLOWING SNOW</option>
+            <option value="CLEAR">CLEAR</option>
+            <option value="CLOUDY">CLOUDY</option>
+            <option value="FOGGY">FOGGY</option>
+            <option value="OTHER">OTHER</option>
+            <option value="RAINING">RAINING</option>
+            <option value="SEVERE WINDS">SEVERE WINDS</option>
+            <option value="SLEET">SLEET</option>
+            <option value="SNOW">SNOW</option>
+            <option value="UNKNOWN">UNKNOWN</option>
+            <option value="WINTRY MIX">WINTRY MIX</option>
+        </select><br>
+
+        <label for="feature5">Surface Condition:</label>
+        <select name="feature5" id="feature5" onchange="updateSurfaceCondition(this.value)">
+            <option value="DRY">DRY</option>
+            <option value="ICE">ICE</option>
+            <option value="MUD, DIRT, GRAVEL">MUD, DIRT, GRAVEL</option>
+            <option value="OIL">OIL</option>
+            <option value="OTHER">OTHER</option>
+            <option value="OIL">OIL</option>
+            <option value="SAND">SAND</option>
+            <option value="SLUSH">SLUSH</option>
+            <option value="SNOW">SNOW</option>
+            <option value="UNKNOWN">UNKNOWN</option>
+            <option value="WATER(STANDING/MOVING)">WATER(STANDING/MOVING)</option>
+            <option value="WET">WET</option>
+        </select><br>
+
+        <label for="feature6">Driver Substance Abuse:</label>
+        <select name="feature6" id="feature6" onchange="updateSubstanceAbuse(this.value)">
+            <option value="ALCOHOL CONTRIBUTED">ALCOHOL CONTRIBUTED</option>
+            <option value="ALCOHOL PRESENT">ALCOHOL PRESENT</option>
+            <option value="COMBINATION CONTRIBUTED">COMBINATION CONTRIBUTED</option>
+            <option value="COMBINED SUBSTANCE PRESENT">COMBINED SUBSTANCE PRESENT</option>
+            <option value="ILLEGAL DRUG CONTRIBUTED">ILLEGAL DRUG CONTRIBUTED</option>
+            <option value="ILLEGAL DRUG PRESENT">ILLEGAL DRUG PRESENT</option>
+            <option value="MEDICATION CONTRIBUTED">MEDICATION CONTRIBUTED</option>
+            <option value="MEDICATION PRESENT">MEDICATION PRESENT</option>
+            <option value="NONE DETECTED">NONE DETECTED</option>
+            <option value="OTHER">OTHER</option>
+            <option value="UNKNOWN">UNKNOWN</option>
+        </select><br>
+
+        <label for="feature7">Driver Distracted By:</label>
+        <select name="feature7" id="feature7" onchange="updateDistractedBy(this.value)">
+            <option value="ADJUSTING AUDIO AND OR CLIMATE CONTROLS">ADJUSTING AUDIO AND OR CLIMATE CONTROLS</option>
+            <option value="BY MOVING OBJECT IN VEHICLE">BY MOVING OBJECT IN VEHICLE</option>
+            <option value="BY OTHER OCCUPANTS">BY OTHER OCCUPANTS</option>
+            <option value="DIALING CELLULAR PHONE">DIALING CELLULAR PHONE</option>
+            <option value="OUTSIDE PERSON OBJECT OR EVENT">OUTSIDE PERSON OBJECT OR EVENT</option>
+            <option value="EATING OR DRINKING">EATING OR DRINKING</option>
+            <option value="INATTENTIVE OR LOST IN THOUGHT">INATTENTIVE OR LOST IN THOUGHT</option>
+            <option value="LOOKED BUT DID NOT SEE">LOOKED BUT DID NOT SEE</option>
+            <option value="NO DRIVER PRESENT">NO DRIVER PRESENT</option>
+            <option value="NOT DISTRACTED">NOT DISTRACTED</option>
+            <option value="OTHER CELLULAR PHONE RELATED">OTHER CELLULAR PHONE RELATED</option>
+            <option value="OTHER DISTRACTION">OTHER DISTRACTION</option>
+            <option value="OTHER ELECTRONIC DEVICE (NAVIGATIONAL PALM PILOT)">OTHER ELECTRONIC DEVICE (NAVIGATIONAL PALM PILOT)
+            </option>
+            <option value="SMOKING RELATED">SMOKING RELATED</option>
+            <option value="TALKING OR LISTENING TO CELLULAR PHONE">TALKING OR LISTENING TO CELLULAR PHONE</option>
+            <option value="TEXTING FROM A CELLULAR PHONE">TEXTING FROM A CELLULAR PHONE</option>
+        </select><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <h2>Injury Severity scale: </h2>
+    <h5> FATAL INJURY - 0</h5> 
+    <h5> NO APPARENT INJURY - 1</h5>
+    <h5> POSSIBLE INJURY - 2</h5>
+    <h5> SUSPECTED MINOR INJURY - 3</h5>
+    <h5> SUSPECTED SERIOUS INJURY - 4</h5>
+        
+
+    
+    <script>
+        // Functions to update selected feature to 1 and others to 0
+        function updateWeather(value) {
+            document.querySelectorAll('#feature4 option').forEach(option => {
+                if (option.value === value) {
+                    option.selected = true;
+                } else {
+                    option.selected = false;
+                }
+            });
+            // Trigger the change event
+            document.querySelector('#feature4').dispatchEvent(new Event('change'));
+        }
+
+        function updateSurfaceCondition(value) {
+            document.querySelectorAll('#feature5 option').forEach(option => {
+                if (option.value === value) {
+                    option.selected = true;
+                } else {
+                    option.selected = false;
+                }
+            });
+            // Trigger the change event
+            document.querySelector('#feature5').dispatchEvent(new Event('change'));
+        }
+
+        function updateSubstanceAbuse(value) {
+            document.querySelectorAll('#feature6 option').forEach(option => {
+                if (option.value === value) {
+                    option.selected = true;
+                } else {
+                    option.selected = false;
+                }
+            });
+            // Trigger the change event
+            document.querySelector('#feature6').dispatchEvent(new Event('change'));
+        }
+
+        function updateDistractedBy(value) {
+            document.querySelectorAll('#feature7 option').forEach(option => {
+                if (option.value === value) {
+                    option.selected = true;
+                } else {
+                    option.selected = false;
+                }
+            });
+            // Trigger the change event
+            document.querySelector('#feature7').dispatchEvent(new Event('change'));
+        }
+    </script>
+
+    {% if prediction_result is defined %}
+    <h2>Prediction Result:</h2>
+    <p>{{ prediction_result }}</p>
+    {% endif %}
+
+
+
+</body>
+
+</html>
