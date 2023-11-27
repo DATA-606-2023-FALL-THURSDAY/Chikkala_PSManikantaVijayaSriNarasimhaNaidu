@@ -146,19 +146,73 @@ and Related Non-Motorist these colums are removed from the dataset as the weight
 - Applied SMOTE (Synthetic Minority oversampling technique) on training data to balance the data.
 - Performed the feature selection using SelectKBest method with the f_classif scoring function.
 - The Features I got from SelectKBest are: 'Driver_Substance_Abuse_NONE DETECTED', 'Driver_Substance_Abuse_UNKNOWN', 'Driver_At_Fault_No', 'Driver_At_Fault_Yes', 'Driver_Distracted_By_NOT DISTRACTED', 'Driver_Distracted_By_UNKNOWN', 'Vehicle_Damage_Extent_DESTROYED', 'Vehicle_Damage_Extent_FUNCTIONAL', 'Vehicle_Damage_Extent_SUPERFICIAL', 'Equipment_Problems_NO MISUSE'
+- Employing a variety of models to generate predictions involves leveraging different algorithms or approaches to analyze and interpret data for forecasting purposes.
+- It encompasses the utilization of diverse modeling techniques to enhance the robustness and reliability of predictions, thereby broadening the scope of methodologies applied for generating accurate and comprehensive results.
+  
+## 5.1 Random Forest Classifier 
 - I used Random Forest Classifier for my initial prediction.
 - Obtained the accuracy of 0.665 using Random Forest Classifier.
-
-## 6. Future work
-- Re-evaluation of features to get the best accuracy.
-- I have to implement other classification algorithms like decision tree, boosting algorithms and neural networks to try improve the accuracy
-- Develop a web app for people to interact with the trained models. As of now I'm thinking of using flask for that.
+  
+<img width="1072" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/e14ecc12-6108-4dce-85a9-c4e12ce47c36">
 
 
+## Re-evaluation of features by selecting manually
+- I manually chose specific features for prediction in order to assess whether this selection would contribute to increased accuracy in the model.
+- By personally curating the features, I aim to evaluate their impact on the predictive capabilities of the model and determine if this tailored approach enhances overall accuracy.
+  
+<img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/88262df1-f5ec-4d03-b78f-7977bb4a383a">
+
+## 5.2 Random Forest Classifier using selected_feature_names
+- I employed a Random Forest Classifier for the chosen features.
+- The figure demonstrates an increase in accuracy, reaching 74%.
+  
+<img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/1ce23d2e-2d93-473a-b281-2a2d57493e4b">
 
 
+## 5.3 XGBClassifier
+- Subsequently, I opted for the XGBClassifier in an attempt to enhance the accuracy of my predictions.
+- This decision reflects a deliberate effort to explore alternative modeling techniques and leverage the strengths of the XGBoost algorithm, aiming to achieve improved precision and reliability in the predictive outcomes.
+- The utilization of XGBClassifier to refine the predictive model and further optimize its performance for more accurate results.
+- The XGBClassifier yielded an accuracy rate of 68%.
+  
+  <img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/225ea08e-9fc7-4cad-aeed-04223dd68f88">
 
+## 5.4 DecisionTreeClassifier
+- Following that, I decided to employ a Decision Tree model.
+- By incorporating a Decision Tree into the predictive modeling process, I sought to evaluate its efficacy and assess whether this algorithm could contribute positively to the overall accuracy of the predictions.
+- This step reflects a systematic exploration of different modeling approaches to identify the most suitable one for achieving optimal results in the prediction task at hand.
+- The Decision Tree Classifier yielded an accuracy rate of 68%, indicating the model's proficiency in correctly predicting outcomes based on the selected features.
+  
+<img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/716a1311-4a7a-4e6e-a94f-019c9b374bf9"> <img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/f5838343-25ae-47e7-b912-9ba1d8deabc9">
+
+## 5.5 Ensemble Modelling
+- Lastly, I ventured into ensemble modeling.
+- This approach involves combining the predictions from multiple models to create a more robust and accurate overall prediction.
+- By leveraging ensemble techniques, such as boosting, I aimed to harness the strengths of diverse models and mitigate individual weaknesses, ultimately enhancing the predictive performance.
+- Ensemble modeling represents a culmination of efforts to optimize accuracy by capitalizing on the complementary nature of various algorithms, contributing to a more comprehensive and reliable prediction framework.
+  
+ <img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/a89c012d-ff3b-4424-be1e-af445bfd9b49"> <img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/26bdc513-d39e-4730-b346-9ca489344c3c">
+
+## saving the models
+<img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/31ec5468-697f-4625-a104-9882000092ff">
+
+## 6. Web Application Using Flask
+<img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/6fad89da-5ab3-4d5f-90d0-007f0657e259">
+
+## 7. conclusion
+
+- Number of accidents got decreased during the COVID period 2019-2020 and moved an upward trend after that till 2022.
+- Most accidents happen in the second half of the year that is during winters (sept-dec).
+- Most of the accidents happened in the daylight.
+- Most accidents happened when the weather is clear and road surface is dry.
+- Most of the accidents happened within the speed limits of 25-40 MPH.
+- Most of the accident’s prediction comes out as no apparent injury.
+- High accuracy is obtained from the random forest model
 
 ## References
 - Crash Reporting - Drivers Data (2015 - 2023) | Montgomery county, Maryland. (https://catalog.data.gov/dataset/crash-reporting-drivers-data)
-
+- https://plotly.com/python-api-reference/
+- https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/
+- https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html
+- Data Source : https://catalog.data.gov/dataset/crash-reporting-drivers-data
+- https://pythonbasics.org/what-is-flask-python/
