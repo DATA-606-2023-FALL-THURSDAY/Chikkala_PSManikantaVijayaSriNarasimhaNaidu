@@ -1,8 +1,10 @@
 # 1. Road Accident Severity Prediction
 - Prepared for UMBC Data Science Master Degree Capstone by Dr Chaoji (Jay) Wang 
-- Author: CHIKKALA PS ManikantaVijayaSri NarasimhaNaidu
+- Author: CHIKKALA PS ManikantaVijayaSri NarasimhaNaidu, UMBC, Fall-2023 Semester
 - GitHub Link: https://github.com/narasimhachikkala
 - LinkedIn profile: https://www.linkedin.com/in/narasimha-naidu-chikkala
+- youtube link:
+- PPT Link: 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## 2. Background
 The project is about predicting the severity of road accidents in a specific region. It accomplishes this by analyzing historical data related to road accidents in that region. The project involves training a predictive model using the historical accident data. Once the model is trained, it can be used to make predictions about the severity of accidents when given new input data, such as information about a recent accident. In essence, this project aims to create a tool or system that can assess and predict the level of severity for road accidents based on historical patterns and data analysis, potentially aiding in better accident prevention and response efforts in the specified region. This project matters because it has the potential to improve road safety, save lives, optimize resource allocation, and contribute to more effective accident prevention and response strategies in the specified region.
@@ -209,10 +211,14 @@ and Related Non-Motorist these colums are removed from the dataset as the weight
 - Most of the accident’s prediction comes out as no apparent injury.
 - High accuracy is obtained from the random forest model
 
+## 8. Future work
+- Experiment with advanced machine learning algorithms beyond decision trees, such as neural networks and systematically tune hyperparameters for optimal performance. 
+- Validating with robust cross-validation methods and evaluating beyond accuracy metrics will provide a nuanced understanding of the model's performance.
+- Collaborate with stakeholders, including transportation authorities, to align the model with practical needs. Establish continuous monitoring systems and feedback loops to ensure ongoing accuracy and relevance.
+
 ## References
-- Crash Reporting - Drivers Data (2015 - 2023) | Montgomery county, Maryland. (https://catalog.data.gov/dataset/crash-reporting-drivers-data)
+-  Data Source : Crash Reporting - Drivers Data (2015 - 2023) | Montgomery county, Maryland. (https://catalog.data.gov/dataset/crash-reporting-drivers-data)
 - https://plotly.com/python-api-reference/
 - https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/
 - https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html
-- Data Source : https://catalog.data.gov/dataset/crash-reporting-drivers-data
 - https://pythonbasics.org/what-is-flask-python/
