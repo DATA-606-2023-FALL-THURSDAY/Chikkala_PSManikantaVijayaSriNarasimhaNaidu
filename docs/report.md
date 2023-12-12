@@ -11,7 +11,7 @@
 ## 2. Background
 The project is about predicting the severity of road accidents in a specific region. It accomplishes this by analyzing historical data related to road accidents in that region. The project involves training a predictive model using the historical accident data. Once the model is trained, it can be used to make predictions about the severity of accidents when given new input data, such as information about a recent accident. In essence, this project aims to create a tool or system that can assess and predict the level of severity for road accidents based on historical patterns and data analysis, potentially aiding in better accident prevention and response efforts in the specified region. This project matters because it has the potential to improve road safety, save lives, optimize resource allocation, and contribute to more effective accident prevention and response strategies in the specified region.
 
-#### Research Questions :
+### Research Questions :
 a. What temporal or seasonal trends exist in accident severity within the target  region, and how can these patterns be incorporated into the predictive analysis? 
 
 b. Which specific factors exhibit the greatest influence on road accident severity within the target region, and how can this understanding inform the predictive modeling process?
@@ -86,11 +86,12 @@ Description : This dataset reports details of all traffic collisions occurring o
 
       It can Classified into:
       
-         - NO APPARENT INJURY          
-         - POSSIBLE INJURY              
-         - SUSPECTED MINOR INJURY       
-         - SUSPECTED SERIOUS INJURY     
-         - FATAL INJURY                   
+         - FATAL INJURY(0) 
+         - NO APPARENT INJURY(1)          
+         - POSSIBLE INJURY(2)              
+         - SUSPECTED MINOR INJURY(3)      
+         - SUSPECTED SERIOUS INJURY(4)     
+                  
 
 **3.5 Which variables/columns may selected as features/predictors for your ML models?**
    - Since there are too many features and adding all the features will increase noise in the model so the features are selected after performing the basic EDA and applying feature selection algos (PCA, dimensionality reduction, selectKbest).
