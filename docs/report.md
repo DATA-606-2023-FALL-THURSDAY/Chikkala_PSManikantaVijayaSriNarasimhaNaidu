@@ -5,8 +5,8 @@
 - Author: CHIKKALA PS ManikantaVijayaSri NarasimhaNaidu, UMBC, Fall-2023 Semester
 - GitHub Link: https://github.com/narasimhachikkala
 - LinkedIn profile: https://www.linkedin.com/in/narasimha-naidu-chikkala
-- youtube link:
-- PPT Link: 
+- youtube link: https://youtu.be/5gnWX30M0lY
+- PPT Link: [Presentation.pptx](https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/blob/main/docs/DATA_606_PPT.pptx)
 
 ## 2. Background
 The project is about predicting the severity of road accidents in a specific region. It accomplishes this by analyzing historical data related to road accidents in that region. The project involves training a predictive model using the historical accident data. Once the model is trained, it can be used to make predictions about the severity of accidents when given new input data, such as information about a recent accident. In essence, this project aims to create a tool or system that can assess and predict the level of severity for road accidents based on historical patterns and data analysis, potentially aiding in better accident prevention and response efforts in the specified region. This project matters because it has the potential to improve road safety, save lives, optimize resource allocation, and contribute to more effective accident prevention and response strategies in the specified region.
