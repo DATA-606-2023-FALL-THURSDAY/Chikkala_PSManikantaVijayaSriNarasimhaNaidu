@@ -154,59 +154,65 @@ and Related Non-Motorist these colums are removed from the dataset as the weight
   
 
 ## 5. Model Training
+
 - Splitting the data into 80 - 20 for training and testing.
+- When embarking on the model-building process, two crucial steps are essential for enhancing the model's effectiveness: balancing the data and performing feature selection.
+- The combination of balanced data and judicious feature selection lays the foundation for building a robust and effective predictive model. This approach ensures that the model is trained on representative and pertinent information, enhancing its ability to generalize well to unseen data and improving overall performance.
+
+## Data Balancing
+  
+SMOTE (Synthetic Minority Over-sampling Technique) is used to address class imbalance in the training data. 
+Class imbalance refers to a situation where one class has significantly fewer samples than another. SMOTE generates synthetic samples for the minority class (the one with fewer samples) to balance the class distribution. It does this by creating new data points that are combinations of existing minority class samples. After applying SMOTE, the code prints the class distribution before and after SMOTE to demonstrate how it balances the classes. The resulting X_train_balanced and y_train_balanced can be used for training machine learning models that are less likely to be biased towards the majority class due to the class imbalance.
+
 - Applied SMOTE (Synthetic Minority oversampling technique) on training data to balance the data.
+<img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/01d58bcf-abaf-40cf-a5ba-1adedc6e603d">
+
+## Feature Selection
 - Performed the feature selection using SelectKBest method with the f_classif scoring function.
 - The Features I got from SelectKBest are: 'Driver_Substance_Abuse_NONE DETECTED', 'Driver_Substance_Abuse_UNKNOWN', 'Driver_At_Fault_No', 'Driver_At_Fault_Yes', 'Driver_Distracted_By_NOT DISTRACTED', 'Driver_Distracted_By_UNKNOWN', 'Vehicle_Damage_Extent_DESTROYED', 'Vehicle_Damage_Extent_FUNCTIONAL', 'Vehicle_Damage_Extent_SUPERFICIAL', 'Equipment_Problems_NO MISUSE'
-- Employing a variety of models to generate predictions involves leveraging different algorithms or approaches to analyze and interpret data for forecasting purposes.
-- It encompasses the utilization of diverse modeling techniques to enhance the robustness and reliability of predictions, thereby broadening the scope of methodologies applied for generating accurate and comprehensive results.
-  
+
+<img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/f748b7b4-ef9d-4c07-bd28-4522bb634acc">
+
+
+## Predictive models
+
 ## 5.1 Random Forest Classifier 
-- I used Random Forest Classifier for my initial prediction.
-- Obtained an accuracy of 0.665 using Random Forest Classifier.
+
+I initially employed the Random Forest Classifier for making predictions, and the results indicated an accuracy level of 0.665. This classifier, known for its ensemble learning technique, was utilized as the primary tool in the initial phase of the prediction process. The obtained accuracy of 0.665 serves as a quantitative measure of the model's performance, reflecting its ability to make correct predictions based on the provided data.
   
-<img width="1072" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/e14ecc12-6108-4dce-85a9-c4e12ce47c36">
-
-
 ## Re-evaluation of features by selecting manually
-- I manually chose specific features for prediction in order to assess whether this selection would contribute to increased accuracy in the model.
-- By personally curating the features, I aim to evaluate their impact on the predictive capabilities of the model and determine if this tailored approach enhances overall accuracy.
+
+I handpicked particular features for the prediction process to see if selecting them myself would boost the accuracy of the model. The idea behind personally choosing these features is to examine how they influence the model's ability to make predictions and to figure out if this customized approach improves the overall accuracy of the model. This hands-on selection of features is essentially an experiment to understand the impact of tailored feature selection on the model's predictive performance.
   
 <img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/88262df1-f5ec-4d03-b78f-7977bb4a383a">
 
 ## 5.2 Random Forest Classifier using selected_feature_names
-- I employed a Random Forest Classifier for the chosen features.
-- The figure demonstrates an increase in accuracy, reaching 74%.
-  
-<img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/1ce23d2e-2d93-473a-b281-2a2d57493e4b">
 
+The Random Forest Classifier, when applied to a subset of manually selected features, exhibits a notable improvement in accuracy, reaching an impressive 74%. This enhancement underscores the effectiveness of strategically choosing relevant features in optimizing the model's predictive performance. The careful curation of features has proven instrumental in achieving a more precise and reliable outcome, showcasing the impact of thoughtful feature selection on the Random Forest Classifier's proficiency in the given task.
 
 ## 5.3 XGBClassifier
-- Subsequently, I opted for the XGBClassifier in an attempt to enhance the accuracy of my predictions.
-- This decision reflects a deliberate effort to explore alternative modeling techniques and leverage the strengths of the XGBoost algorithm, aiming to achieve improved precision and reliability in the predictive outcomes.
-- The utilization of XGBClassifier to refine the predictive model and further optimize its performance for more accurate results.
-- The XGBClassifier yielded an accuracy rate of 68%.
-  
-  <img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/225ea08e-9fc7-4cad-aeed-04223dd68f88">
+
+Afterwards, I chose to use the XGBClassifier with the goal of improving the accuracy of my predictions. This choice was made intentionally to explore different modeling techniques and make use of the strengths inherent in the XGBoost algorithm. The aim was to enhance precision and reliability in the predictions. The decision to employ the XGBClassifier was driven by the intention to fine-tune the predictive model, making it more effective and yielding results with increased accuracy. Ultimately, the XGBClassifier delivered a 68% accuracy rate, showcasing its contribution to refining the model's performance.
 
 ## 5.4 DecisionTreeClassifier
-- Following that, I decided to employ a Decision Tree model.
-- By incorporating a Decision Tree into the predictive modeling process, I sought to evaluate its efficacy and assess whether this algorithm could contribute positively to the overall accuracy of the predictions.
-- This step reflects a systematic exploration of different modeling approaches to identify the most suitable one for achieving optimal results in the prediction task at hand.
-- The Decision Tree Classifier yielded an accuracy rate of 68%, indicating the model's proficiency in correctly predicting outcomes based on the selected features.
+
+After that, I made the choice to use a Decision Tree model. By integrating a Decision Tree into the predictive modeling process, I aimed to examine its effectiveness and determine if this algorithm could enhance the overall accuracy of the predictions. This decision was part of a methodical exploration of various modeling approaches to pinpoint the most fitting one for achieving the best results in the prediction task. The Decision Tree Classifier produced an accuracy rate of 68%, signifying the model's ability to accurately predict outcomes based on the chosen features. This step was essential in understanding how the Decision Tree model contributes to the overall effectiveness of the predictive system.
   
-<img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/716a1311-4a7a-4e6e-a94f-019c9b374bf9"> <img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/f5838343-25ae-47e7-b912-9ba1d8deabc9">
 
 ## 5.5 Ensemble Modelling
-- Lastly, I ventured into ensemble modeling.
-- This approach involves combining the predictions from multiple models to create a more robust and accurate overall prediction.
-- By leveraging ensemble techniques, such as boosting, I aimed to harness the strengths of diverse models and mitigate individual weaknesses, ultimately enhancing the predictive performance.
-- Ensemble modeling represents a culmination of efforts to optimize accuracy by capitalizing on the complementary nature of various algorithms, contributing to a more comprehensive and reliable prediction framework.
-  
- <img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/a89c012d-ff3b-4424-be1e-af445bfd9b49"> <img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/26bdc513-d39e-4730-b346-9ca489344c3c">
 
-## Saving the models
-<img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/31ec5468-697f-4625-a104-9882000092ff">
+Finally, I delved into ensemble modeling. This strategy revolves around merging predictions from several models to generate a more resilient and precise overall prediction. Through the use of ensemble techniques, particularly boosting, my objective was to capitalize on the unique strengths of different models and counteract individual weaknesses. The ultimate goal was to elevate the overall predictive performance by combining the diverse capabilities of various algorithms. Ensemble modeling stands as the culmination of efforts aimed at optimizing accuracy, taking advantage of the collaborative and complementary nature of different algorithms. This approach contributes to the development of a more comprehensive and dependable prediction framework. 
+
+## Best Model Identified through Accuracy Scores
+
+This visual representation highlights a notable observation: the Random Forest model, specifically when applied to a curated set of selected features, has generated a higher number of predictions compared to the other models in the analysis. This suggests that the Random Forest algorithm, when strategically employed with a focused subset of features, exhibits a greater predictive capacity than alternative models considered in the evaluation. The emphasis on feature selection appears to have a discernible impact on the overall prediction generation, underscoring the effectiveness of this approach in enhancing the model's predictive output.
+
+<img width="971" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/d6e6f5ab-8ae3-443d-8f86-99fcb9b3ed84">
+ 
+  
+## Saving the model
+
+After determining the best model based on accuracy, it's crucial to save it for future use. This involves preserving the model's parameters and integrating it into a Flask web application, enabling efficient and real-time predictions. The saved model serves as a valuable asset in streamlining the transition from model training to practical deployment within the web app, ensuring optimal user experience.
 
 
 ## 6. Web Application Using Flask
@@ -221,7 +227,7 @@ On this webpage, users can find a range of features such as month, year, weather
 
 By inputting various attributes such as the month, year, and weather conditions, the model endeavors to forecast and assign the most appropriate severity class to a potential road accident. This classification system serves as a valuable tool for users to comprehend the potential outcomes in terms of injury severity, allowing for a more informed and proactive approach to road safety. Users can thus leverage this predictive capability to better understand the potential consequences of different scenarios, aiding in the development of strategies to mitigate the severity of road accidents.
 
-<img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/6fad89da-5ab3-4d5f-90d0-007f0657e259">
+![image](https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/904acfe2-83bc-46ec-a838-9cad3170c969)
 
 
 ## 7. Conclusion
@@ -232,7 +238,7 @@ By inputting various attributes such as the month, year, and weather conditions,
 - Most accidents happened when the weather is clear and road surface is dry.
 - Most of the accidents happened within the speed limits of 25-40 MPH.
 - Most of the accident’s prediction comes out as no apparent injury.
-- High accuracy is obtained from the random forest model
+- High accuracy is obtained from the random forest model.
 
 \
 Limitations:
