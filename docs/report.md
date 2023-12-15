@@ -2,7 +2,7 @@
 
 ## 1. Title and Author
 - Prepared for UMBC Data Science Master Degree Capstone by Dr Chaoji (Jay) Wang 
-- Author: CHIKKALA PS ManikantaVijayaSri NarasimhaNaidu, UMBC, Fall-2023 Semester
+- Author: Chikkala PS ManikantaVijayaSri NarasimhaNaidu, UMBC, Fall-2023 Semester
 - GitHub Link: https://github.com/narasimhachikkala
 - LinkedIn profile: https://www.linkedin.com/in/narasimha-naidu-chikkala
 - youtube link: https://youtu.be/5gnWX30M0lY
@@ -210,6 +210,17 @@ and Related Non-Motorist these colums are removed from the dataset as the weight
 
 
 ## 6. Web Application Using Flask
+
+On this webpage, users can find a range of features such as month, year, weather conditions, and other attributes. Utilizing these diverse attributes, the goal is to predict the degree of severity associated with a road accident. The predictive model operates by classifying injury severity into distinct classes, each associated with a specific numerical scale. The classification scale is structured as follows:
+
+- Class 0: Fatal Injury
+- Class 1: No Apparent Injury
+- Class 2: Possible Injury
+- Class 3: Suspected Minor Injury
+- Class 4: Suspected Serious Injury
+
+By inputting various attributes such as the month, year, and weather conditions, the model endeavors to forecast and assign the most appropriate severity class to a potential road accident. This classification system serves as a valuable tool for users to comprehend the potential outcomes in terms of injury severity, allowing for a more informed and proactive approach to road safety. Users can thus leverage this predictive capability to better understand the potential consequences of different scenarios, aiding in the development of strategies to mitigate the severity of road accidents.
+
 <img width="958" alt="image" src="https://github.com/DATA-606-2023-FALL-THURSDAY/Chikkala_PSManikantaVijayaSriNarasimhaNaidu/assets/75675597/6fad89da-5ab3-4d5f-90d0-007f0657e259">
 
 
@@ -222,6 +233,19 @@ and Related Non-Motorist these colums are removed from the dataset as the weight
 - Most of the accidents happened within the speed limits of 25-40 MPH.
 - Most of the accident’s prediction comes out as no apparent injury.
 - High accuracy is obtained from the random forest model
+
+\
+Limitations:
+- The model's performance is constrained by the availability and quality of data. Incomplete or biased data may hinder its accuracy.
+- Human behavior, a key factor in road accidents, is inherently unpredictable. While models can incorporate historical data, they may not fully capture the dynamic nature of human decision-making.
+- Privacy and ethical considerations surrounding the use of personal data may pose challenges. Adhering to regulatory guidelines is crucial to address these concerns.
+
+\
+Lessons Learned:
+- The data preprocessing is a crucial step in shaping the predictive accuracy of our models. The quality and representativeness of our training data significantly impact the overall performance. The importance of comprehensive data exploration, meticulous data cleansing, and rigorous validation procedures cannot be overstated. These practices are critical for reducing biases and fortifying the overall resilience of our system.
+- The selection of features must strike a balance between relevance and informativeness. Iterative refinement of features is essential for enhancing the model's predictive accuracy.
+-  Handling imbalances in the severity classes is vital. Techniques such as oversampling minority classes or using appropriate evaluation metrics can lead to more robust models.
+-  Acknowledging regional variations in accident patterns is crucial. Customizing the model or incorporating region-specific features can enhance its predictive power across diverse geographical areas.
 
 
 ## 8. Future work
